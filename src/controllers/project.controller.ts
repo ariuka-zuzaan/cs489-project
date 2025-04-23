@@ -23,8 +23,7 @@ export const getProjects = async (req: Request, res: Response) => {
 };
 
 export const getProjectById = async (req: Request, res: Response) => {
-  const { id } = req.params;
-  console.log(req.params);
-  const project = await projectService.getProjectById(Number(id));
+  const { projectId } = req.params;
+  const project = await projectService.getProjectById(Number(projectId));
   res.status(200).json(project);
 };

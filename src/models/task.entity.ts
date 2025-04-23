@@ -20,6 +20,12 @@ export class Task {
   @Column()
   description: string;
 
+  @Column({ type: "timestamp" })
+  startDate!: Date;
+
+  @Column({ type: "timestamp" })
+  endDate!: Date;
+
   @Column({ type: "enum", enum: TaskStatus, default: TaskStatus.TODO })
   status: TaskStatus;
 

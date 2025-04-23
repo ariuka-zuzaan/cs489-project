@@ -3,8 +3,8 @@ import { createProject, getProjects, getProjectById } from "../controllers/proje
 
 const router = Router();
 
-router.post("/", createProject);
 router.get("/", getProjects);
-router.get("/:id", getProjectById);
+router.post("/", createProject);
+router.get("/:projectId", getProjectById);
 
 export default router;
