@@ -1,0 +1,36 @@
+{
+  "name": "cs489-project",
+  "version": "1.0.0",
+  "description": "Task management system",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/main.js",
+    "dev": "ts-node-dev --respawn src/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariuka-zuzaan/cs489-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ariuka-zuzaan/cs489-project/issues"
+  },
+  "homepage": "https://github.com/ariuka-zuzaan/cs489-project#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.14.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.22"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.14.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
