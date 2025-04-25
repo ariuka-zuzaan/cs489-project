@@ -13,7 +13,7 @@ describe("projectRepo", () => {
   const mockGetRepository = dataSourceModule.AppDataSource.getRepository as jest.Mock;
 
   beforeEach(() => {
-    mockGetRepository.mockClear();
+    mockGetRepository.mockReset();
   });
 
   it("should export a Project entity repository", () => {

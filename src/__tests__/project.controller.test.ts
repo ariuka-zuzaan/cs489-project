@@ -1,10 +1,6 @@
 import { Request, Response } from "express";
 
 import { ProjectService } from "../services/project.service";
-import { createProject } from "../controllers/project.controller";
-import { CreateProjectDTO, ProjectResponseDTO } from "../dtos/project.dto";
-import { UserResponseDTO } from "../dtos/user.dto";
-
 describe("getProjects Controller", () => {
   let projectService: ProjectService;
 
