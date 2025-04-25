@@ -1,9 +1,9 @@
-import { ProjectService } from "../../services/project.service";
-import { projectRepo } from "../../repositories/project.repository"; // adjust import if needed
+import { ProjectService } from "../services/project.service";
+import { projectRepo } from "../repositories/project.repository"; // adjust import if needed
 import { Project } from "models/project.entity";
 import { User } from "models/user.entity";
 
-jest.mock("../../repositories/project.repository");
+jest.mock("../repositories/project.repository");
 
 describe("ProjectService - getProjects", () => {
   let projectService: ProjectService;
