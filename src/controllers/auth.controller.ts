@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { AuthService } from "../services/auth.service";
 import { CreateUserDTO } from "../dtos/user.dto";
-import { toUserEntity } from "../mappers/user.mapper";
 
 const authService = new AuthService();
 

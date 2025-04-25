@@ -6,7 +6,6 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     res.status(401).json({ message: "Unauthorized" });
   }
-
   const token = authHeader?.split(" ")[1];
   if (!token) {
     res.status(401).json({ message: "Unauthorized" });
@@ -14,9 +13,11 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
   }
   try {
     const decoded: any = jwt.verify(token, "secret");
-    // req.user = { id: decoded.id as string };
+
+    req.user = { id: decoded.id as string, role: decoded.role };
     next();
-  } catch {
+  } catch (err) {
+    console.log("error", err);
     res.status(401).json({ message: "Unauthorized" });
     return;
   }

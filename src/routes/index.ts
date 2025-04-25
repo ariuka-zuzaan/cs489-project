@@ -7,8 +7,8 @@ import projectRoutes from "./project.routes";
 
 const router = Router();
 
-// router.use("/", authMiddleware);
 router.use("/auth", authRoutes);
+router.use("/", authMiddleware);
 router.use("/tasks", taskRoutes);
 router.use("/projects", projectRoutes);
 

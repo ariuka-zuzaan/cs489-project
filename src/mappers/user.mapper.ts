@@ -15,4 +15,5 @@ export const toUserResponse = (user: User): UserResponseDTO => ({
   firstName: user.firstName,
   lastName: user.lastName,
   email: user.email,
+  roleName: user.role?.name,
 });

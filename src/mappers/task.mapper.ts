@@ -11,7 +11,7 @@ export const toTaskEntity = (dto: CreateTaskDTO, user: User, project: Project): 
   task.title = dto.title;
   task.description = dto.description;
   task.status = dto.status || "TODO";
-  task.user = user;
+  task.assignedTo = user;
   task.project = project;
   task.startDate = new Date(dto.startDate);
   task.endDate = new Date(dto.endDate);
@@ -25,7 +25,7 @@ export const toTaskResponse = (task: Task): TaskResponseDTO => ({
   status: task.status,
   startDate: task.startDate?.toISOString().split("T")[0],
   endDate: task.endDate?.toISOString().split("T")[0],
-  user: toUserResponse(task.user),
+  user: toUserResponse(task.assignedTo),
   project: {
     id: task.project.id,
     name: task.project.name,

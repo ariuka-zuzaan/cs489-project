@@ -1,6 +1,8 @@
 import "reflect-metadata";
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, JoinColumn, ManyToOne } from "typeorm";
 import { Task } from "./task.entity";
+import { Role } from "./role.entity";
+import { User } from "./user.entity";
 
 @Entity()
 export class Project {
@@ -18,6 +20,10 @@ export class Project {
 
   @Column({ type: "timestamp" })
   endDate!: Date;
+
+  @ManyToOne(() => User, (user) => user.projects, { eager: true })
+  @JoinColumn({ name: "created_by" })
+  createdBy: User;
 
   @OneToMany(() => Task, (task) => task.project)
   tasks: Task[];

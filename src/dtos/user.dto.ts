@@ -4,6 +4,7 @@ export interface CreateUserDTO {
   lastName: string;
   email: string;
   password: string;
+  roleId: number;
 }
 
 export interface UserResponseDTO {
@@ -11,4 +12,5 @@ export interface UserResponseDTO {
   firstName: string;
   lastName: string;
   email: string;
+  roleName: string;
 }

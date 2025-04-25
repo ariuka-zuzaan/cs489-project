@@ -1,5 +1,5 @@
 // import "reflect-metadata";
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinColumn } from "typeorm";
 import { User } from "./user.entity";
 import { Project } from "./project.entity";
 
@@ -29,8 +29,9 @@ export class Task {
   @Column({ type: "enum", enum: TaskStatus, default: TaskStatus.TODO })
   status: TaskStatus;
 
-  @ManyToOne(() => User, (user) => user.tasks)
-  user: User;
+  @ManyToOne(() => User, (user) => user.tasks, { eager: true })
+  @JoinColumn({ name: "assigned_to" })
+  assignedTo: User;
 
   @ManyToOne(() => Project, (project) => project.tasks)
   project: Project;
